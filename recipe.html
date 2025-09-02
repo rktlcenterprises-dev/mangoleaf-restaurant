@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+  <link rel="icon" href="mangologo.jpg" type="image/jpg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #ff6600 !important;
+      font-size: 1.5rem;
+    }
+    .nav-link {
+      color: #333 !important;
+      margin-right: 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-link:hover,
+    .nav-link.active {   /* Active state added */
+      color: #ff6600 !important;
+      font-weight: 600;
+    }
+
+    /* Navbar Logo Size */
+.logo {
+  height: 80px;   /* Increase size (default was ~50px) */
+  width: auto;    /* Keeps aspect ratio */
+}
+
+/* Make logo smaller on mobile screens */
+@media (max-width: 768px) {
+  .logo {
+    height: 60px;
+  }
+}
+
+/* Hero Section with Background Video */
+    .hero {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+    }
+
+    /* Recipes Section */
+     .recipe-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .recipe-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+  .recipe-img {
+    transition: transform 0.4s ease;
+  }
+  .recipe-card:hover .recipe-img {
+    transform: scale(1.08);
+  }
+
+  /* Image */
+
+  .recipe-img-wrapper {
+  height: 120px;     /* smaller height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.recipe-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+
+/* Footer */
+    footer {
+      background: linear-gradient(45deg, #ff6600, #ff9900);
+      color: #fff;
+      padding: 40px 0;
+      border-radius: 40px 40px 0 0;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.3rem;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow-sm sticky-top" style="background-color: rgb(253, 242, 227);">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="mangologo.jpg" alt="Foodies Logo" class="logo">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link active" href="recipe.html">Recipes</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blogs</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Recipes Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #fff5eb, #ffe0cc);">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold display-5" style="color:#ff6600;">🍴 Popular Recipes</h2>
+    
+    <div class="row g-4">
+      
+<!-- Veg Pakora -->
+    <div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4 h-100">
+    <div class="recipe-img-wrapper">
+      <img src="Veg pakora.jpeg" alt="Veg Pakora">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Veg Pakora</h5>
+      <p class="card-text text-muted">Crispy fried vegetable fritters.</p>
+      <p class="fw-bold text-success">₹80</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Paneer Pakora -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="paneer pakora.webp" class="card-img-top" alt="Paneer Pakora">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Paneer Pakora</h5>
+      <p class="card-text text-muted">Soft paneer coated in spiced batter.</p>
+      <p class="fw-bold text-success">₹120</p>
+    </div>
+  </div>
+</div>
+
+      <!-- Onion Pakora -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="onion pakora.jpg" class="card-img-top" alt="Onion Pakora">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Onion Pakora</h5>
+      <p class="card-text text-muted">Golden crispy onion fritters.</p>
+      <p class="fw-bold text-success">₹80</p>
+    </div>
+  </div>
+</div>
+
+     <!-- Egg Pakora -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="eggpakora.jpg" class="card-img-top" alt="Egg Pakora">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Egg Pakora (2 Egg)</h5>
+      <p class="card-text text-muted">Crispy egg fritters.</p>
+      <p class="fw-bold text-success">₹90</p>
+    </div>
+  </div>
+</div>
+
+
+     <!-- Chicken Pakora (BL) -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="chickenpakora.jpg" class="card-img-top" alt="Chicken Pakora (BL)">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Chicken Pakora (BL)</h5>
+      <p class="card-text text-muted">Boneless chicken fritters (8 pcs).</p>
+      <p class="fw-bold text-success">₹165</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Chicken Pakora (WB) -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="chickenWB.jpg" class="card-img-top" alt="Chicken Pakora (WB)">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Chicken Pakora (WB)</h5>
+      <p class="card-text text-muted">With bone chicken fritters (8 pcs).</p>
+      <p class="fw-bold text-success">₹140</p>
+    </div>
+  </div>
+</div>
+
+      <!-- Crispy Chilly Baby Corn -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="crispychilly.jpg" class="card-img-top" alt="Crispy Chilly Baby Corn">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Crispy Chilly Baby Corn</h5>
+      <p class="card-text text-muted">Spicy & crunchy baby corn.</p>
+      <p class="fw-bold text-success">₹150</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Finger Chips -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="figer chips.webp" class="card-img-top" alt="Finger Chips">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Finger Chips</h5>
+      <p class="card-text text-muted">Classic crispy fries.</p>
+      <p class="fw-bold text-success">₹65</p>
+    </div>
+  </div>
+</div>
+
+
+     <!-- Mushroom Salt & Pepper -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="mushroomsalt.jpg" class="card-img-top" alt="Mushroom Salt & Pepper">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Mushroom Salt & Pepper</h5>
+      <p class="card-text text-muted">Crispy mushrooms tossed in pepper.</p>
+      <p class="fw-bold text-success">₹160</p>
+    </div>
+  </div>
+</div>
+
+     <!-- Fish Finger -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="fishfinger.jpg" class="card-img-top" alt="Fish Finger">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Fish Finger</h5>
+      <p class="card-text text-muted">Crispy fish sticks with dip.</p>
+      <p class="fw-bold text-success">₹220</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Fish Fry -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card recipe-card shadow-lg border-0 rounded-4 h-100">
+          <img src="fishfry.jpg" class="card-img-top" alt="Fish Fry">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Fish Fry (B/L)</h5>
+            <p class="card-text text-muted">Spiced fried fish fillet.</p>
+            <p class="fw-bold text-success">₹220</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- Chicken Lollypop -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="lollypop.webp" class="card-img-top" alt="Chicken Lollypop">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Chicken Lollypop (6 pcs)</h5>
+      <p class="card-text text-muted">Spicy fried chicken wings.</p>
+      <p class="fw-bold text-success">₹165</p>
+    </div>
+  </div>
+</div>
+
+     <!-- Chicken Drumstick -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="drumstick.jpg" class="card-img-top" alt="Chicken Drumstick">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Chicken Drumstick (6 pcs)</h5>
+      <p class="card-text text-muted">Juicy fried drumsticks.</p>
+      <p class="fw-bold text-success">₹185</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Chicken Salt & Pepper -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="pepper.jpg" class="card-img-top" alt="Chicken Salt & Pepper">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Chicken Salt & Pepper (6 pcs)</h5>
+      <p class="card-text text-muted">Crispy chicken tossed in pepper.</p>
+      <p class="fw-bold text-success">₹165</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Paneer Tikka -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="paneertikka.jpg" class="card-img-top" alt="Paneer Tikka">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Paneer Tikka</h5>
+      <p class="card-text text-muted">Smoky marinated paneer cubes.</p>
+      <p class="fw-bold text-success">₹210</p>
+    </div>
+  </div>
+</div>
+
+
+     <!-- Paneer Achari Tikka -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="achari.jpg" class="card-img-top" alt="Paneer Achari Tikka">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Paneer Achari Tikka</h5>
+      <p class="card-text text-muted">Paneer marinated with tangy spices.</p>
+      <p class="fw-bold text-success">₹225</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Tandoori Baby Corn & Mushroom -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="babycorn.webp" class="card-img-top" alt="Tandoori Baby Corn & Mushroom">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Tandoori Baby Corn & Mushroom</h5>
+      <p class="card-text text-muted">Tandoori grilled veggies.</p>
+      <p class="fw-bold text-success">₹250</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Fish Tikka -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="fishtikka.webp" class="card-img-top" alt="Fish Tikka">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Fish Tikka</h5>
+      <p class="card-text text-muted">Spicy tandoori fish cubes.</p>
+      <p class="fw-bold text-success">₹250</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Fish Reshmi Kabab -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="reshmikabab.webp" class="card-img-top" alt="Fish Reshmi Kabab">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Fish Reshmi Kabab</h5>
+      <p class="card-text text-muted">Creamy, mild fish kabab.</p>
+      <p class="fw-bold text-success">₹270</p>
+    </div>
+  </div>
+</div>
+
+      <!-- Fish Reshmi Tikka -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="reshmitikka.webp" class="card-img-top" alt="Fish Reshmi Tikka">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Fish Reshmi Tikka</h5>
+      <p class="card-text text-muted">Soft creamy fish tikka.</p>
+      <p class="fw-bold text-success">₹270</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Chicken Tikka -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="Chicken-Tikka.jpg" class="card-img-top" alt="Chicken Tikka">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Chicken Tikka (6 pcs)</h5>
+      <p class="card-text text-muted">Spicy grilled chicken cubes.</p>
+      <p class="fw-bold text-success">₹185</p>
+    </div>
+  </div>
+</div>
+
+
+     <!-- Chicken Reshmi Kabab -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="chicken-reshmi-kebab.jpg" class="card-img-top" alt="Chicken Reshmi Kabab">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Chicken Reshmi Kabab (6 pcs)</h5>
+      <p class="card-text text-muted">Mild creamy kabab.</p>
+      <p class="fw-bold text-success">₹210</p>
+    </div>
+  </div>
+</div>
+
+
+     <!-- Chicken Pahari Kabab -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="chickenpahadi.jpg" class="card-img-top" alt="Chicken Pahari Kabab">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Chicken Pahari Kabab (6 pcs)</h5>
+      <p class="card-text text-muted">Spicy pahari-style kabab.</p>
+      <p class="fw-bold text-success">₹210</p>
+    </div>
+  </div>
+</div>
+
+      <!-- Tandoori Chicken -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="tandoori-chicken.jpg" class="card-img-top" alt="Tandoori Chicken">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Tandoori Chicken</h5>
+      <p class="card-text text-muted">Half/Full traditional tandoori.</p>
+      <p class="fw-bold text-success">₹170 / ₹300</p>
+    </div>
+  </div>
+</div>
+
+    <!-- Tangdi Kabab -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="chicken-tangri-kabab.webp" class="card-img-top" alt="Tangdi Kabab">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Tangdi Kabab (2 pcs)</h5>
+      <p class="card-text text-muted">Juicy grilled chicken legs.</p>
+      <p class="fw-bold text-success">₹170 / ₹280</p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Honey Chicken -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="honey.jpg" class="card-img-top" alt="Honey Chicken">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Honey Chicken</h5>
+      <p class="card-text text-muted">Crispy chicken glazed in honey.</p>
+      <p class="fw-bold text-success">₹230</p>
+    </div>
+  </div>
+</div>
+
+      <!-- Dragon Chicken -->
+<div class="col-lg-3 col-md-6">
+  <div class="card recipe-card shadow-lg border-0 rounded-4">
+    <div class="recipe-img-wrapper">
+      <img src="dragon-chicken.webp" class="card-img-top" alt="Dragon Chicken">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title fw-bold">Dragon Chicken</h5>
+      <p class="card-text text-muted">Spicy Indo-Chinese chicken.</p>
+      <p class="fw-bold text-success">₹230</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+  </div>
+</section>
+
+    
+<!-- Footer -->
+<footer class="text-white pt-5" style="background: #ff6600; border-radius: 40px 40px 0 0;">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      
+      <!-- Brand -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">Mango Leaf Restaurant</h5>
+        <p>Eat healthy, live better. Discover delicious recipes and fresh meals every day.</p>
+      </div>
+
+     <!-- Quick Links -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white text-decoration-none fs-6">Home</a></li>
+          <li><a href="about.html" class="text-white text-decoration-none fs-6">About</a></li>
+          <li><a href="menu.html" class="text-white text-decoration-none fs-6">Menu</a></li>
+          <li><a href="recipe.html" class="text-white text-decoration-none fs-6">Recipes</a></li>
+          <li><a href="blog.html" class="text-white text-decoration-none fs-6">Blogs</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none fs-6">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Contact</h6>
+        <p>
+          Manchappanahalli Gate, Khata No 1924/2024, Bagalur to Budigere Road, near Budigere By Pass, 
+          Manchapanahalli, Bengaluru, Karnataka 562165
+        </p>
+        <p class="text-nowrap fs-6">
+          <strong>Email:</strong><a href="mailto:mangoleafblr@gmail.com" class="text-white text-decoration-none fs-6">mangoleafblr@gmail.com</a>
+        </p>
+        <p class="text-nowrap fs-6">
+          <strong>Phone:</strong><a href="tel:+919880703329" class="text-white text-decoration-none fs-6">+91 98807 03329</a>
+        </p>
+
+      </div>
+
+
+      <!-- Social Media -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Follow Us</h6>
+        <a href="https://www.facebook.com/p/Mango-Leaf-61571309891629/." class="text-white fs-5 me-3"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/mangoleafrestaurant_/" class="text-white fs-5 me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://youtube.com/@mangoleafrestaurant?si=t0I7qSUHk9THaQZt" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="text-center border-top border-light pt-3 mt-3">
+  <p class="mb-0">&copy; 2025 Mango Leaf Restaurant | All Rights Reserved </p>
+</div>
+
+  </div>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
