@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recipes - Mango Leaf Restaurant</title>
+  <link rel="icon" href="mangologo.jpg" type="image/jpg" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff8f3;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #ffe6d1;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #ff6600 !important;
+      font-size: 1.4rem;
+    }
+    .nav-link { color: #333 !important; font-weight: 500; }
+    .nav-link.active { color: #ff6600 !important; font-weight: 600; }
+
+    .logo { height: 70px; width: auto; }
+    @media (max-width: 768px) { .logo { height: 56px; } }
+
+    /* Section headers */
+    .section-heading {
+      color: #ff6600;
+      font-weight: 700;
+      margin: 2rem 0 1rem;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .section-subtext {
+      color:#6c6c6c;
+      margin-bottom:1rem;
+    }
+
+    /* Card grid */
+    .dish-card {
+      border-radius: 12px;
+      border: 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .dish-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.09);
+    }
+    .dish-body {
+      padding: 1rem;
+    }
+    .dish-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #222;
+    }
+    .dish-desc {
+      font-size: .92rem;
+      color: #6a6a6a;
+      margin: .35rem 0;
+      min-height: 40px;
+    }
+    .dish-price {
+      font-weight: 800;
+      color: #0b8a3e;
+      font-size: 1rem;
+    }
+    /* compact columns on small screens */
+    @media (max-width: 576px) {
+      .dish-desc { min-height: auto; }
+    }
+
+    footer {
+      background: linear-gradient(45deg,#ff6600,#ff9900);
+      color: #fff;
+      padding: 36px 0;
+      border-radius: 40px 40px 0 0;
+      margin-top: 40px;
+    }
+    footer a { color: #fff; text-decoration:none; }
+    .small-muted { color:#6c6c6c; font-size:.94rem; }
+
+    .category-row { margin-bottom: 1.25rem; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="mangologo.jpg" alt="Mango Leaf" class="logo me-2">
+      Mango Leaf
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link active" href="recipe.html">Recipes</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blogs</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main content -->
+<main class="container py-5">
+
+  <header class="text-center mb-4">
+    <h1 class="fw-bold" style="color:#ff6600">🍽️ Recipes & Dishes</h1>
+    <p class="section-subtext">All dishes & prices as per the Mango Leaf menu.</p>
+  </header>
+
+  <!-- SOUPS (Veg) -->
+  <section id="soups" class="mb-4">
+    <div class="section-heading"><i class="bi bi-egg-fried"></i><h3 class="mb-0">Soups (Veg)</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Manchow Soup</div>
+            <div class="dish-desc">All time favorite thick & spicy Chinese soup with assorted vegetables & crispy noodles.</div>
+            <div class="dish-price">₹69</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Hot & Sour Soup</div>
+            <div class="dish-desc">Classic thick & spicy Chinese soup with tofu, mushroom, bamboo shoots & aromatic vegetables.</div>
+            <div class="dish-price">₹109</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Sweet Corn Veg Soup</div>
+            <div class="dish-desc">Thick Chinese soup with assorted vegetables & sweet corn kernels.</div>
+            <div class="dish-price">₹99</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Cream of Tomato Soup</div>
+            <div class="dish-desc">Creamy tomato purée simmered with fresh herbs, topped with crunchy croutons & cream.</div>
+            <div class="dish-price">₹89</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Lemon Coriander Veg</div>
+            <div class="dish-desc">Thick soup with green chilli, fresh coriander leaves and squeeze of lemon juice.</div>
+            <div class="dish-price">₹99</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEG SALAD -->
+  <section id="salads" class="mb-4">
+    <div class="section-heading"><i class="bi bi-card-list"></i><h3 class="mb-0">Veg Salad</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Garden Green Salad</div>
+            <div class="dish-desc">Tomato, cucumber, onions & carrot — chef's take on the classic green salad.</div>
+            <div class="dish-price">₹69</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHINESE STARTERS (Veg) -->
+  <section id="chinese-veg" class="mb-4">
+    <div class="section-heading"><i class="bi bi-activity"></i><h3 class="mb-0">Chinese Starters — Veg</h3></div>
+    <p class="small-muted">Crispy & saucy veg starters from your menu.</p>
+
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Crispy Baby Corn in Chili Hoisin Sauce</div>
+            <div class="dish-desc">Fried baby corn tossed in dry red chilli, garlic, Asian spice & hoisin sauce.</div>
+            <div class="dish-price">₹199</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Chilli Basil Paneer</div>
+            <div class="dish-desc">Crispy fried cottage cheese tossed with hot basil and fresh chilli.</div>
+            <div class="dish-price">₹219</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Crispy Lotus Stem</div>
+            <div class="dish-desc">Crispy fried lotus stem tossed with honey chilli garlic sauce.</div>
+            <div class="dish-price">₹199</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Veg Spring Roll</div>
+            <div class="dish-desc">Handmade spring rolls with vegetable & noodles stuffing.</div>
+            <div class="dish-price">₹169</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chilli Style variants -->
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Chilli Style — Paneer / Mushroom / Baby Corn / Potato</div>
+            <div class="dish-desc">Spicy chilli style tossed veg.</div>
+            <div class="dish-price">₹179 / ₹159 / ₹169</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manchurian -->
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Manchurian Sauce — Gobi / Mushroom / Paneer / Baby Corn</div>
+            <div class="dish-desc">Manchurian in classic sauce.</div>
+            <div class="dish-price">₹139 / ₹149 / ₹169 / ₹159</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Salt & Pepper -->
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Salt & Pepper Dry — Gobi / Mushroom / Paneer / Baby Corn</div>
+            <div class="dish-desc">Crispy battered veg tossed with salt & pepper.</div>
+            <div class="dish-price">₹139 / ₹149 / ₹169 / ₹159</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Golden Fry Baby Corn</div>
+            <div class="dish-desc">Baby corn fried until golden, served with hot garlic sauce.</div>
+            <div class="dish-price">₹159</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Kung Pao Babycorn</div>
+            <div class="dish-desc">Baby corn in classic kung pao sauce with cashew nuts & Sichuan pepper.</div>
+            <div class="dish-price">₹169</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Cilanto Chili Paneer</div>
+            <div class="dish-desc">Fried cottage cheese tossed with coriander chilli pesto sauce.</div>
+            <div class="dish-price">₹199</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Cilantro Chilli Gobi</div>
+            <div class="dish-desc">Batter-fried cauliflower tossed with coriander chilli pesto sauce.</div>
+            <div class="dish-price">₹159</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Schezwan Style — Cauliflower / Paneer / Baby Corn / Mushroom</div>
+            <div class="dish-desc">Schezwan-flavored veg starters.</div>
+            <div class="dish-price">₹149 / ₹169 / ₹159 / ₹155</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TANDOOR VEG STARTERS -->
+  <section id="tandoor-veg" class="mb-4">
+    <div class="section-heading"><i class="bi bi-fire"></i><h3 class="mb-0">Tandoor — Veg Starters</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Teekha Paneer Tikka</div>
+            <div class="dish-desc">Paneer marinated in Indian spices & yogurt, cooked in clay oven.</div>
+            <div class="dish-price">₹199</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Desi Tandoori Pineapple</div>
+            <div class="dish-desc">Raw pineapple marinated with tandoori masala & cooked in clay oven.</div>
+            <div class="dish-price">₹149</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Achari Paneer Tikka</div>
+            <div class="dish-desc">Paneer flavored with mango marination & traditional spices.</div>
+            <div class="dish-price">₹199</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Hariyali Paneer Tikka</div>
+            <div class="dish-desc">Paneer marinated with cilantro, mint, yogurt & spices.</div>
+            <div class="dish-price">₹209</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Tandoor Mushroom</div>
+            <div class="dish-desc">Mushrooms marinated with spices, herbs & yogurt, grilled to perfection.</div>
+            <div class="dish-price">₹189</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Bharwan Mushroom</div>
+            <div class="dish-desc">Mushrooms stuffed with cheese & paneer, cooked in clay oven.</div>
+            <div class="dish-price">₹209</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Malai Paneer Tikka</div>
+            <div class="dish-desc">Creamy malai paneer tikka with cashew & cream-based marinade.</div>
+            <div class="dish-price">₹219</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INDIAN VEG GRAVY -->
+  <section id="indian-veg-gravy" class="mb-4">
+    <div class="section-heading"><i class="bi bi-basket"></i><h3 class="mb-0">Indian Veg Gravies</h3></div>
+    <p class="small-muted">Rich gravies and paneer/vegetable specialities.</p>
+
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Tandoori Paneer Lahori Masala</div>
+            <div class="dish-desc">Clay oven cooked paneer simmered in onion and tomato gravy.</div>
+            <div class="dish-price">₹229</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Nargis Kofta</div>
+            <div class="dish-desc">Cottage cheese & vegetable dumplings in rich tomato-cashew gravy.</div>
+            <div class="dish-price">₹239</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Paneer Lababdar</div>
+            <div class="dish-desc">Paneer in onion-tomato gravy — rich, flavorful & mildly spicy.</div>
+            <div class="dish-price">₹229</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Veg Mazedar</div>
+            <div class="dish-desc">Mixed vegetables with grated paneer in a rich gravy.</div>
+            <div class="dish-price">₹199</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Malai Kofta</div>
+            <div class="dish-desc">Vegetable rounds stuffed with dried fruits in a creamy white gravy.</div>
+            <div class="dish-price">₹239</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Lazeez Paneer</div>
+            <div class="dish-desc">Paneer cubes cooked in a mild sauce with bell peppers.</div>
+            <div class="dish-price">₹229</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Veg Kolhapuri</div>
+            <div class="dish-desc">Assorted vegetables cooked in spicy Kolhapuri style.</div>
+            <div class="dish-price">₹199</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Kadai Paneer</div>
+            <div class="dish-desc">Paneer and crisp bell peppers cooked in spicy tomato-base gravy.</div>
+            <div class="dish-price">₹239</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Mushroom Masala</div>
+            <div class="dish-desc">Button mushrooms in onion-tomato-yogurt based masala.</div>
+            <div class="dish-price">₹219</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Kadai Mushroom</div>
+            <div class="dish-desc">White button mushrooms, capsicums & onion in special spices.</div>
+            <div class="dish-price">₹229</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Dal Tadka</div>
+            <div class="dish-desc">Seasoned dal with tempering of spices.</div>
+            <div class="dish-price">₹169</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mt-2">
+        <div class="card dish-card">
+          <div class="dish-body">
+            <div class="dish-title">Dal Fry</div>
+            <div class="dish-desc">Toor dal cooked & tempered with whole spices, ginger, garlic and tomatoes.</div>
+            <div class="dish-price">₹149</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHINESE RICE & NOODLES -->
+  <section id="chinese-rice-noodles" class="mb-4">
+    <div class="section-heading"><i class="bi bi-nut-fill"></i><h3 class="mb-0">Chinese Rice & Noodles</h3></div>
+    <p class="small-muted">Fried rice and noodles — veg & non-veg options.</p>
+
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Veg Fried Rice</div><div class="dish-desc">Classic veg fried rice.</div><div class="dish-price">₹129</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mushroom Fried Rice</div><div class="dish-desc">Fried rice with mushrooms.</div><div class="dish-price">₹139</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Paneer Fried Rice</div><div class="dish-desc">Fried rice with paneer cubes.</div><div class="dish-price">₹149</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mix Veg Fried Rice</div><div class="dish-desc">Mixed vegetable fried rice.</div><div class="dish-price">₹139</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Schezwan Fried Rice</div><div class="dish-desc">Schezwan flavored fried rice.</div><div class="dish-price">₹159</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Veg Noodles</div><div class="dish-desc">Simple veg noodles.</div><div class="dish-price">₹129</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Haka Noodles</div><div class="dish-desc">Classic Hakka style noodles.</div><div class="dish-price">₹139</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Schezwan Noodles</div><div class="dish-desc">Spicy Schezwan noodles.</div><div class="dish-price">₹149</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mix Veg Noodles</div><div class="dish-desc">Noodles with mixed vegetables.</div><div class="dish-price">₹159</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Fried Rice</div><div class="dish-desc">Fried rice with chicken.</div><div class="dish-price">₹179</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Schezwan Fried Rice</div><div class="dish-desc">Schezwan style chicken fried rice.</div><div class="dish-price">₹179</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Egg Noodles</div><div class="dish-desc">Noodles with egg.</div><div class="dish-price">₹169</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Noodles</div><div class="dish-desc">Chicken noodles.</div><div class="dish-price">₹159</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Schezwan Noodles</div><div class="dish-desc">Schezwan chicken noodles.</div><div class="dish-price">₹199</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Egg Fried Rice</div><div class="dish-desc">Fried rice with egg.</div><div class="dish-price">₹149</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Egg Schezwan Fried Rice</div><div class="dish-desc">Schezwan egg fried rice.</div><div class="dish-price">₹159</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Prawns Fried Rice</div><div class="dish-desc">Fried rice with prawns.</div><div class="dish-price">₹229</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- INDIAN RICE -->
+  <section id="indian-rice" class="mb-4">
+    <div class="section-heading"><i class="bi bi-shop"></i><h3 class="mb-0">Indian Rice</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Veg Biryani</div><div class="dish-desc">Aromatic veg biryani.</div><div class="dish-price">₹169</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Paneer Biryani</div><div class="dish-desc">Biryani with paneer cubes.</div><div class="dish-price">₹199</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mushroom Biryani</div><div class="dish-desc">Mushroom biryani.</div><div class="dish-price">₹189</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Tomato Rice</div><div class="dish-desc">Tangy tomato rice.</div><div class="dish-price">₹129</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Palak Khichadi</div><div class="dish-desc">Spinach khichadi.</div><div class="dish-price">₹139</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Dal Khichadi</div><div class="dish-desc">Dal khichadi.</div><div class="dish-price">₹149</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Jeera Rice</div><div class="dish-desc">Fragrant cumin rice.</div><div class="dish-price">₹149</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Ghee Rice</div><div class="dish-desc">Rich ghee-flavored rice.</div><div class="dish-price">₹159</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Curd Rice</div><div class="dish-desc">Comforting curd rice.</div><div class="dish-price">₹99</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Plain Rice</div><div class="dish-desc">Steamed plain rice.</div><div class="dish-price">₹69</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- INDIAN BREADS -->
+  <section id="breads" class="mb-4">
+    <div class="section-heading"><i class="bi bi-bread-slice"></i><h3 class="mb-0">Indian Breads</h3></div>
+    <div class="row g-3">
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Roti</div><div class="dish-desc">Regular roti.</div><div class="dish-price">₹25</div></div></div></div>
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Butter Roti</div><div class="dish-desc">Roti with butter.</div><div class="dish-price">₹35</div></div></div></div>
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Naan</div><div class="dish-desc">Soft naan.</div><div class="dish-price">₹40</div></div></div></div>
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Butter Naan</div><div class="dish-desc">Butter brushed naan.</div><div class="dish-price">₹45</div></div></div></div>
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Kulcha</div><div class="dish-desc">Soft kulcha.</div><div class="dish-price">₹40</div></div></div></div>
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Butter Kulcha</div><div class="dish-desc">Butter kulcha.</div><div class="dish-price">₹45</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Aloo Paratha</div><div class="dish-desc">Stuffed potato paratha.</div><div class="dish-price">₹60</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Stuffed Paratha</div><div class="dish-desc">Assorted stuffed paratha.</div><div class="dish-price">₹70</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Paneer Paratha</div><div class="dish-desc">Paneer stuffed paratha.</div><div class="dish-price">₹80</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Garlic Butter Naan</div><div class="dish-desc">Naan with garlic butter.</div><div class="dish-price">₹55</div></div></div></div>
+
+    </div>
+  </section>
+
+  <!-- SOUPS (Non-Veg) -->
+  <section id="soups-nonveg" class="mb-4">
+    <div class="section-heading"><i class="bi bi-droplet-half"></i><h3 class="mb-0">Soups (Non-Veg)</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Cream of Chicken Soup</div><div class="dish-desc">Chicken simmered with fresh herbs, topped with croutons & cream.</div><div class="dish-price">₹129</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Sweet Corn Chicken Soup</div><div class="dish-desc">Classic chicken & sweet corn soup.</div><div class="dish-price">₹139</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Hot & Sour Soup</div><div class="dish-desc">Light & tangy chicken hot & sour.</div><div class="dish-price">₹139</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Manchow Soup</div><div class="dish-desc">Spicy Manchow with chicken & vegetables.</div><div class="dish-price">₹139</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mutton Leg Soup</div><div class="dish-desc">Mutton with aromatics & spices.</div><div class="dish-price">₹149</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mutton Plain Soup</div><div class="dish-desc">Mutton soup with spices.</div><div class="dish-price">₹129</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Crab Soup</div><div class="dish-desc">Crab meat with aromatics and white pepper.</div><div class="dish-price">₹169</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Clear Soup</div><div class="dish-desc">Light chicken clear soup.</div><div class="dish-price">₹139</div></div></div></div>
+
+    </div>
+  </section>
+
+  <!-- CHINESE STARTERS (Non-Veg) -->
+  <section id="chinese-nonveg" class="mb-4">
+    <div class="section-heading"><i class="bi bi-basket2-fill"></i><h3 class="mb-0">Chinese Starters — Non-Veg</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Drunken Fried Chicken</div><div class="dish-desc">Poached/steamed chicken marinated in wine — chilled appetizer style.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">General Toast Chicken</div><div class="dish-desc">Crispy fried chicken coated in sweet-spicy savory sauce.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Kung Pao Chicken</div><div class="dish-desc">Spicy stir-fried chicken with cashew nuts & Sichuan pepper.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Honey Chilli Chicken</div><div class="dish-desc">Deep-fried battered chicken coated in sticky honey sauce.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Schezwan Spicy Wings</div><div class="dish-desc">Wings stir-fried with dried red chillies & chilli bean paste.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Spicy Honey Wings</div><div class="dish-desc">Grilled wings brushed with sweet honey glaze.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken 65</div><div class="dish-desc">Classic Chicken 65 style appetizer.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chilli Chicken</div><div class="dish-desc">Crispy fried chicken pieces tossed in spicy tangy sauce with onion & capsicum.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Finger</div><div class="dish-desc">Boneless breaded & fried chicken tenderloins.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Hongkong</div><div class="dish-desc">Chicken pieces in savory sauce with soy & oyster sauce.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Lollypop</div><div class="dish-desc">Chicken wings trimmed to lollipop shape & deep fried.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Manchurian</div><div class="dish-desc">Chicken pieces in sweet & spicy Manchurian sauce.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Pepper Dry</div><div class="dish-desc">Chicken with generous black pepper & aromatic spices (dry).</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chilli Garlic Wings</div><div class="dish-desc">Fried wings smothered in chilli-garlic sauce.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Crispy Chicken</div><div class="dish-desc">Crunchy, golden-brown fried chicken pieces.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Dragon Chicken</div><div class="dish-desc">Crispy fried chicken strips in spicy, tangy sauce.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Drums of Heaven</div><div class="dish-desc">Fried chicken lollipops tossed in sweet-spicy sauce.</div><div class="dish-price">₹269</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">French Chicken</div><div class="dish-desc">Lightly battered & pan-fried chicken cutlets.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Garlic Chicken</div><div class="dish-desc">Chicken with prominent garlic flavor.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Lemon Chicken</div><div class="dish-desc">Chicken flavored with lemon juice & zest.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mutton Chilli</div><div class="dish-desc">Mutton cooked with chilies & aromatic spices.</div><div class="dish-price">₹349</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Sriraja Chicken</div><div class="dish-desc">Chicken cooked with Sriracha-style sauce.</div><div class="dish-price">₹289</div></div></div></div>
+
+    </div>
+  </section>
+
+  <!-- ANDHRA STYLE -->
+  <section id="andhra" class="mb-4">
+    <div class="section-heading"><i class="bi bi-flag"></i><h3 class="mb-0">Andhra Style</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Andhra Chicken Kabab</div><div class="dish-desc">Marinated & deep-fried chicken kabab in Andhra style.</div><div class="dish-price">₹219</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chilli Chicken Andhra Style</div><div class="dish-desc">Green chilli paste, ginger-garlic & coriander with Indian spices.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Guntur Chicken</div><div class="dish-desc">Spicy Guntur-style masala with dried red chillies & aromatic spices.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Tawa Chicken</div><div class="dish-desc">Chicken cooked on tawa with flavorful masala.</div><div class="dish-price">₹239</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- NATTI STYLE & BIRYANI -->
+  <section id="natti-biryani" class="mb-4">
+    <div class="section-heading"><i class="bi bi-geo-alt"></i><h3 class="mb-0">Natti Style & Biryani</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Biryani</div><div class="dish-desc">Karnataka-style chicken biryani.</div><div class="dish-price">₹189</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mutton Biryani</div><div class="dish-desc">Flavorful mutton biryani.</div><div class="dish-price">₹279</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Boti Fry</div><div class="dish-desc">Spiced & fried boti (meat) pieces.</div><div class="dish-price">₹219</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Egg Boti Fry</div><div class="dish-desc">Egg-based boti fry.</div><div class="dish-price">₹249</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- MUTTON ITEMS -->
+  <section id="mutton" class="mb-4">
+    <div class="section-heading"><i class="bi bi-bicycle"></i><h3 class="mb-0">Mutton Items</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mutton Masala</div><div class="dish-desc">Flavorful mutton cooked in rich masala.</div><div class="dish-price">₹299</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mutton Fry</div><div class="dish-desc">Marinated & fried tender mutton pieces (semi-dry).</div><div class="dish-price">₹349</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mutton Dry</div><div class="dish-desc">Dry, intensely flavored mutton preparation.</div><div class="dish-price">₹349</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mutton Pepper Fry</div><div class="dish-desc">Mutton with strong black pepper flavor (dry).</div><div class="dish-price">₹349</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mutton Chilli</div><div class="dish-desc">Tender mutton pieces cooked with spices & chillies.</div><div class="dish-price">₹349</div></div></div></div>
+
+    </div>
+  </section>
+
+  <!-- TANDOOR (Non-Veg) -->
+  <section id="tandoor-nonveg" class="mb-4">
+    <div class="section-heading"><i class="bi bi-thermometer-half"></i><h3 class="mb-0">Tandoor — Non-Veg</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Tikka</div><div class="dish-desc">Boneless chicken marinated & cooked in tandoor.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Hariyali Kabab</div><div class="dish-desc">Green masala marinated chicken grilled to perfection.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Seek Kabab</div><div class="dish-desc">Minced spiced chicken, skewered & grilled.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Achari Kabab</div><div class="dish-desc">Tangy pickling-spice marinated kabab.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Malai Kabab</div><div class="dish-desc">Creamy-curd based malai kabab.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Reshmi Kabab</div><div class="dish-desc">Creamy marinated chicken kebabs.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Lasooni Kabab</div><div class="dish-desc">Garlic-glazed chicken chunks grilled.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Kalmi Kabab (4 pcs)</div><div class="dish-desc">Leg-piece marinated & grilled (4 pcs).</div><div class="dish-price">₹269</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Tandoori Chicken Half</div><div class="dish-desc">Half tandoori chicken marinated & roasted in tandoor.</div><div class="dish-price">₹299</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Tandoori Chicken Full</div><div class="dish-desc">Full roasted tandoori chicken.</div><div class="dish-price">₹549</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Platter</div><div class="dish-desc">Assorted tandoori platter.</div><div class="dish-price">₹899</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Banjara Kabab (Bone)</div><div class="dish-desc">Bone chicken pieces marinated in yoghurt-based masala.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Banjara Kabab (Boneless)</div><div class="dish-desc">Boneless version of Banjara kabab.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Angara Kabab (Spicy)</div><div class="dish-desc">Fiery kebab in secret spicy marinade.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Lahori Kabab</div><div class="dish-desc">Minced meat kabab cooked over grill.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Tandoori Chicken Wings</div><div class="dish-desc">Spicy tandoori grilled wings.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Tandoori Kabab</div><div class="dish-desc">Tandoori-style kabab.</div><div class="dish-price">₹229</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- INDIAN GRAVY (Non-Veg) -->
+  <section id="indian-nonveg-gravy" class="mb-4">
+    <div class="section-heading"><i class="bi bi-wrench"></i><h3 class="mb-0">Indian Gravies — Non-Veg</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Masala</div><div class="dish-desc">Chicken cooked in spiced onion-tomato gravy.</div><div class="dish-price">₹189</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Kadai Chicken</div><div class="dish-desc">Chicken simmered with ghee, tomatoes, ginger & whole spices.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Butter Masala</div><div class="dish-desc">Creamy butter chicken style gravy.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Adraki</div><div class="dish-desc">Chicken flavored with ginger & basic masalas.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Hyderabadi</div><div class="dish-desc">Marinated chicken with fried onion paste & green masala.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Hundi</div><div class="dish-desc">Tomato-based chicken gravy cooked with onion & spices.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Palak</div><div class="dish-desc">Chicken cooked with spinach & spices.</div><div class="dish-price">₹219</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Kali Mirch</div><div class="dish-desc">Chicken with freshly ground black pepper & cream.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Tikka Masala</div><div class="dish-desc">Roasted marinated chicken chunks in creamy spiced sauce.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Lababdar</div><div class="dish-desc">Chicken in yogurt & spices.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Methi Malai Murgh</div><div class="dish-desc">Chicken with fresh methi leaves in creamy gravy.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chicken Do-Payza</div><div class="dish-desc">Chicken cooked with double the onions & aromatic spices.</div><div class="dish-price">₹239</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mango Leaf Teen Patiyala</div><div class="dish-desc">Chef special preparation.</div><div class="dish-price">₹259</div></div></div></div>
+
+    </div>
+  </section>
+
+  <!-- PAKKODAS -->
+  <section id="pakkodas" class="mb-4">
+    <div class="section-heading"><i class="bi bi-basket-fill"></i><h3 class="mb-0">Pakkodas</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Onion Pakoda</div><div class="dish-desc">Onion fritters served with mint sauce.</div><div class="dish-price">₹119</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Egg Pakoda</div><div class="dish-desc">Hard boiled egg dipped in gram flour batter & fried.</div><div class="dish-price">₹129</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Aloo Pakoda</div><div class="dish-desc">Potato fritters.</div><div class="dish-price">₹89</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Capsicum Pakoda</div><div class="dish-desc">Bell pepper fritters.</div><div class="dish-price">₹89</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mix Veg Pakoda</div><div class="dish-desc">Assorted veg fritters served with mint chutney.</div><div class="dish-price">₹89</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Paneer Pakoda</div><div class="dish-desc">Soft paneer cubes coated in spiced gram flour batter & fried.</div><div class="dish-price">₹149</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- SEAFOOD -->
+  <section id="seafood" class="mb-4">
+    <div class="section-heading"><i class="bi bi-egg-fried"></i><h3 class="mb-0">Seafood</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Fish Chilli / Manchurian</div><div class="dish-desc">Fish in chilli or Manchurian style.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Prawns Manchurian</div><div class="dish-desc">Prawns in Manchurian sauce.</div><div class="dish-price">₹349</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Prawns Chilli</div><div class="dish-desc">Spicy prawns in chilli sauce.</div><div class="dish-price">₹349</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Prawns Pepper Dry</div><div class="dish-desc">Prawns cooked with pepper (dry).</div><div class="dish-price">₹349</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Crab Masala</div><div class="dish-desc">Crab cooked in masala.</div><div class="dish-price">₹249</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Prawns Ghee Roast</div><div class="dish-desc">Rich ghee-roasted prawns.</div><div class="dish-price">₹449</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Fish Kebab</div><div class="dish-desc">Spiced fish kebab.</div><div class="dish-price">₹229</div></div></div></div>
+
+      <!-- Items that were named without prices in PDF like Angel Tawa Fry etc. — include as listed (no explicit price available) -->
+      <div class="col-12 mt-2 small-muted">Other seafood fry options in menu (Angel Tawa Fry, Bangada Tawa Fry, Bangada Rava Fry, Silver Raw Fry) — prices may vary in the kitchen. Please update if you'd like fixed prices shown here.</div>
+
+    </div>
+  </section>
+
+  <!-- MOCKTAILS -->
+  <section id="mocktails" class="mb-4">
+    <div class="section-heading"><i class="bi bi-cup"></i><h3 class="mb-0">Mocktails</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Fruit Punch</div><div class="dish-desc">Refreshing fruit punch mocktail.</div><div class="dish-price">₹179</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Orange Blossom</div><div class="dish-desc">Citrus mocktail.</div><div class="dish-price">₹199</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Cindrella</div><div class="dish-desc">Signature mocktail.</div><div class="dish-price">₹199</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mango Lassi</div><div class="dish-desc">Thick mango lassi.</div><div class="dish-price">₹139</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Andhra Special</div><div class="dish-desc">Special mocktail with Andhra flavours.</div><div class="dish-price">₹219</div></div></div></div>
+
+    </div>
+  </section>
+
+  <!-- DESSERTS & ICE CREAM -->
+  <section id="desserts" class="mb-4">
+    <div class="section-heading"><i class="bi bi-ice-cream"></i><h3 class="mb-0">Ice Cream & Desserts</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Fruit Salad</div><div class="dish-desc">Fresh seasonal fruits.</div><div class="dish-price">₹169</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Fruity Salad Ice Cream</div><div class="dish-desc">Fruit salad served with ice cream.</div><div class="dish-price">₹199</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chocolate Fantasy</div><div class="dish-desc">Chocolate dessert special.</div><div class="dish-price">₹179</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Grass Hopper</div><div class="dish-desc">Mint-chocolate dessert.</div><div class="dish-price">₹159</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Triple Sundae</div><div class="dish-desc">Three-scoop sundae.</div><div class="dish-price">₹159</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Gud Bud</div><div class="dish-desc">Traditional dessert.</div><div class="dish-price">₹189</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Gulab Jamoon</div><div class="dish-desc">Classic gulab jamun.</div><div class="dish-price">₹79</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- DOUBLE SCOOP (Ice Cream) -->
+  <section id="doublescoop" class="mb-4">
+    <div class="section-heading"><i class="bi bi-balloon"></i><h3 class="mb-0">Double Scoop</h3></div>
+    <div class="row g-3">
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Vanilla (Double)</div><div class="dish-desc">Double scoop vanilla.</div><div class="dish-price">₹79</div></div></div></div>
+
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Strawberry (Double)</div><div class="dish-desc">Double scoop strawberry.</div><div class="dish-price">₹79</div></div></div></div>
+
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chocolate (Double)</div><div class="dish-desc">Double scoop chocolate.</div><div class="dish-price">₹79</div></div></div></div>
+
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mango (Double)</div><div class="dish-desc">Double scoop mango.</div><div class="dish-price">₹69</div></div></div></div>
+
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Butter Scotch (Double)</div><div class="dish-desc">Double scoop butterscotch.</div><div class="dish-price">₹89</div></div></div></div>
+
+      <div class="col-md-2 col-sm-4"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Pista (Double)</div><div class="dish-desc">Double scoop pista.</div><div class="dish-price">₹89</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- MILKSHAKES -->
+  <section id="milkshakes" class="mb-4">
+    <div class="section-heading"><i class="bi bi-cup-straw"></i><h3 class="mb-0">Milkshakes</h3></div>
+    <div class="row g-3">
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Mango Milk Shake</div><div class="dish-desc">Thick mango shake.</div><div class="dish-price">₹149</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Strawberry Milk Shake</div><div class="dish-desc">Strawberry shake.</div><div class="dish-price">₹159</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Vanilla Milk Shake</div><div class="dish-desc">Vanilla shake.</div><div class="dish-price">₹139</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Butterscotch Milk Shake</div><div class="dish-desc">Butterscotch shake.</div><div class="dish-price">₹149</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Pista Milk Shake</div><div class="dish-desc">Pista shake.</div><div class="dish-price">₹149</div></div></div></div>
+
+      <div class="col-md-3 col-sm-6 mt-2"><div class="card dish-card"><div class="dish-body"><div class="dish-title">Chocolate Milk Shake</div><div class="dish-desc">Chocolate shake.</div><div class="dish-price">₹149</div></div></div></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-3 mb-3">
+        <h5 class="fw-bold">Mango Leaf Restaurant</h5>
+        <p class="small-muted">Eat healthy, live better. Discover delicious recipes and fresh meals every day.</p>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <h6 class="fw-bold">Quick Links</h6>
+        <ul class="list-unstyled small-muted">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="recipe.html">Recipes</a></li>
+          <li><a href="pub&partyhall.html">Facilities</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <h6 class="fw-bold">Contact</h6>
+        <p class="small-muted">Manchappanahalli Gate, Bagalur to Budigere Road, Bengaluru, Karnataka 562165</p>
+        <p class="small-muted"><strong>Email:</strong> <a href="mailto:mangoleafblr@gmail.com">mangoleafblr@gmail.com</a></p>
+        <p class="small-muted"><strong>Phone:</strong> <a href="tel:+919880703329">+91 98807 03329</a></p>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <h6 class="fw-bold">Follow Us</h6>
+        <a href="https://www.facebook.com/p/Mango-Leaf-61571309891629/." class="me-2 text-white"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="https://www.instagram.com/mangoleafrestaurant_/" class="me-2 text-white"><i class="bi bi-instagram fs-4"></i></a>
+        <a href="https://youtube.com/@mangoleafrestaurant?si=t0I7qSUHk9THaQz" class="me-2 text-white"><i class="bi bi-youtube fs-4"></i></a>
+      </div>
+    </div>
+
+    <div class="text-center mt-3 small-muted border-top pt-3">
+      &copy; 2025 Mango Leaf Restaurant | All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

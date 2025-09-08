@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MangoLeaf Restaurant & Rooms | Cozy Stays in Bengaluru</title>
+  <link rel="icon" href="mangologo.jpg" type="image/jpg">
+
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Stay at MangoLeaf Restaurant & Rooms, Bengaluru. Cozy rooms with Wi-Fi, AC, breakfast, and premium facilities. Perfect for solo travelers, couples, and families.">
+  <meta name="keywords" content="MangoLeaf Restaurant, Rooms in Bengaluru, Hotel near Budigere Road, Affordable rooms Bangalore, Cozy stays Bangalore, MangoLeaf Pub & Party Hall, MangoLeaf Catering, MangoLeaf Restaurant Rooms">
+  <meta name="author" content="MangoLeaf Restaurant">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="en">
+  <meta name="geo.region" content="IN-KA">
+  <meta name="geo.placename" content="Bengaluru, Karnataka, India">
+  <meta name="geo.position" content="13.0878;77.7056">
+  <meta name="ICBM" content="13.0878, 77.7056">
+
+  <!-- ✅ Open Graph / Facebook -->
+  <meta property="og:title" content="MangoLeaf Restaurant & Rooms | Cozy Stays in Bengaluru">
+  <meta property="og:description" content="Book your stay at MangoLeaf Restaurant & Rooms. Enjoy comfortable rooms with Wi-Fi, AC, breakfast & premium facilities near Budigere Road, Bengaluru.">
+  <meta property="og:image" content="room1.jpeg">
+  <meta property="og:url" content="https://mangoleaf.com/rooms.html">
+  <meta property="og:type" content="website">
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MangoLeaf Restaurant & Rooms | Cozy Stays in Bengaluru">
+  <meta name="twitter:description" content="Book comfortable rooms at MangoLeaf Restaurant & Rooms, Bengaluru. Free Wi-Fi, AC, and breakfast.">
+  <meta name="twitter:image" content="room2.jpeg">
+
+  <!-- ✅ Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MangoLeaf Restaurant & Rooms",
+    "image": "mangologo.jpg",
+    "url": "https://mangoleaf.com/rooms.html",
+    "telephone": "+91-9880703329",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Manchappanahalli Gate, Bagalur to Budigere Road, near Budigere By Pass",
+      "addressLocality": "Manchapanahalli, Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "562165",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "13.0878",
+      "longitude": "77.7056"
+    },
+    "sameAs": [
+      "https://www.facebook.com/p/Mango-Leaf-61571309891629/",
+      "https://www.instagram.com/mangoleafrestaurant_/",
+      "https://youtube.com/@mangoleafrestaurant"
+    ],
+    "priceRange": "₹₹"
+  }
+  </script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #fff; }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #ff6600 !important;
+      font-size: 1.5rem;
+    }
+    .nav-link {
+      color: #333 !important;
+      margin-right: 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-link:hover,
+    .nav-link.active {   /* Active state added */
+      color: #ff6600 !important;
+      font-weight: 600;
+    }
+
+    /* Navbar Logo Size */
+.logo {
+  height: 80px;   /* Increase size (default was ~50px) */
+  width: auto;    /* Keeps aspect ratio */
+}
+
+/* Make logo smaller on mobile screens */
+@media (max-width: 768px) {
+  .logo {
+    height: 60px;
+  }
+}
+
+/* Hero Section */
+
+.hero {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("room-hero.jpg") center/cover no-repeat;
+  min-height: 40vh;   /* Laptop view */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffc107; /* Gold */
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+/* Mobile view fix */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;   /* remove forced height */
+    padding: 15px 10px; /* less top & bottom space */
+  }
+  .hero-title {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+  }
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+}
+
+    /* Horizontal Scroll Gallery */
+    .scroll-gallery {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+    }
+    .scroll-gallery::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scroll-gallery::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+    }
+    .scroll-gallery img {
+      height: 250px;
+      width: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .scroll-gallery img:hover {
+      transform: scale(1.05);
+    }
+    .scroll-btn {
+      border: none;
+      background: #28a745;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 10;
+    }
+    .scroll-btn.left { left: -20px; }
+    .scroll-btn.right { right: -20px; }
+    .scroll-wrapper {
+      position: relative;
+    }
+
+/* Footer */
+    footer {
+      background: linear-gradient(45deg, #ff6600, #ff9900);
+      color: #fff;
+      padding: 40px 0;
+      border-radius: 40px 40px 0 0;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.3rem;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #000;
+    }
+
+    /* Add spacing between dropdown items */
+.dropdown-menu .dropdown-item.dropdown-spaced {
+  padding: 8px 15px;   /* more clickable space */
+  margin-bottom: 4px;  /* space between items */
+  border-radius: 6px;  /* optional: rounded effect */
+}
+
+/* Optional hover effect */
+.dropdown-menu .dropdown-item.dropdown-spaced:hover {
+  background-color: #f8f9fa; /* light gray on hover */
+}
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow-sm sticky-top" style="background-color: rgb(253, 242, 227);">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="mangologo.jpg" alt="Foodies Logo" class="logo">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <!-- Navbar -->
+<div class="collapse navbar-collapse" id="navmenu">
+  <ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+    <li class="nav-item"><a class="nav-link" href="recipe.html">Recipes</a></li>
+
+    <!-- Facilities Dropdown with Icons -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="facilitiesDropdown" role="button" 
+     data-bs-toggle="dropdown" aria-expanded="false">
+    Facilities
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="facilitiesDropdown">
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="pub&partyhall.html">
+        <i class="bi bi-cup-straw me-2"></i> Pub & Party Hall
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="restaurant.html">
+        <i class="bi bi-egg-fried me-2"></i> Restaurant
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="homedelivery.html">
+        <i class="bi bi-truck me-2"></i> Home Delivery
+      </a>
+    </li>
+    <!-- New Rooms item -->
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="rooms.html">
+        <i class="bi bi-house-door me-2"></i> Rooms
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="catering.html">
+        <i class="bi bi-basket me-2"></i> Catering
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="tablebooking.html">
+        <i class="bi bi-calendar-check me-2"></i> Table Booking
+      </a>
+    </li>
+  </ul>
+</li>
+
+
+    <li class="nav-item"><a class="nav-link" href="blog.html">Blogs</a></li>
+    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+</nav>
+
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center text-center">
+  <div class="container">
+    <h1 class="hero-title mb-2">
+      Where Every Stay Tells a Story
+    </h1>
+    <p class="hero-subtitle">
+     Convenient stays and great food under one roof – MangoLeaf Restaurant
+    </p>
+  </div>
+</section>
+
+
+
+
+
+<!-- Add Animate.css for smooth text animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- Rooms Horizontal Scroll Gallery -->
+<section id="rooms" class="py-5 container">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Our Rooms</h2>
+    <p class="text-muted">Scroll through our cozy and stylish rooms</p>
+  </div>
+
+  <div class="scroll-wrapper">
+    <button class="scroll-btn left" onclick="scrollGallery(-1)"><i class="bi bi-chevron-left"></i></button>
+    <div class="scroll-gallery" id="roomScroll">
+      <img src="room1.jpeg" alt="Room 1">
+      <img src="room2.jpeg" alt="Room 2">
+      <img src="room3.jpeg" alt="Room 3">
+      <img src="room4.jpeg" alt="Room 4">
+      <img src="room5.jpeg" alt="Room 5">
+      <img src="room6.jpeg" alt="Room 6">
+      <img src="room7.jpeg" alt="Room 7">
+      <img src="room8.jpeg" alt="Room 8">
+    </div>
+    <button class="scroll-btn right" onclick="scrollGallery(1)"><i class="bi bi-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- Room Rent Information -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">💫 Where Every Stay Feels Special</h2>
+      <p class="text-muted">Simple pricing, maximum comfort</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Quote 1 -->
+      <div class="col-md-6">
+        <blockquote class="blockquote bg-white shadow-sm rounded p-4 h-100">
+          <p class="mb-0">“Perfect for solo travelers – Wi-Fi, AC, and Breakfast included.”</p>
+        </blockquote>
+      </div>
+
+      <!-- Quote 2 -->
+      <div class="col-md-6">
+        <blockquote class="blockquote bg-white shadow-sm rounded p-4 h-100">
+          <p class="mb-0">“A cozy space for two – Wi-Fi, TV, AC & in-room dining service.”</p>
+        </blockquote>
+      </div>
+
+      <!-- Quote 3 -->
+      <div class="col-md-6">
+        <blockquote class="blockquote bg-white shadow-sm rounded p-4 h-100">
+          <p class="mb-0">“Live in luxury – King bed, lounge area, and premium amenities.”</p>
+        </blockquote>
+      </div>
+
+      <!-- Quote 4 -->
+      <div class="col-md-6">
+        <blockquote class="blockquote bg-white shadow-sm rounded p-4 h-100">
+          <p class="mb-0">“Spacious stay for families – 2 Queen beds, Wi-Fi, and AC included.”</p>
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Facilities -->
+<section class="bg-white py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Facilities</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <i class="bi bi-wifi display-5 text-success"></i>
+        <p class="mt-2">Free Wi-Fi</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-snow display-5 text-success"></i>
+        <p class="mt-2">Air Conditioned</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-cup-hot display-5 text-success"></i>
+        <p class="mt-2">Complimentary Breakfast</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact -->
+<section class="py-5 text-center bg-light">
+  <div class="container">
+    <h2 class="fw-bold">📞 Call Us Today</h2>
+    <p class="text-muted">
+      For reservations and inquiries, reach us at 
+      <strong style="white-space: nowrap;">+91 98765 43210</strong>
+    </p>
+  </div>
+</section>
+
+
+
+
+
+<!-- Footer -->
+<footer class="text-white pt-5" style="background: #ff6600; border-radius: 40px 40px 0 0;">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      
+      <!-- Brand -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">Mango Leaf Restaurant</h5>
+        <p>Eat healthy, live better. Discover delicious recipes and fresh meals every day.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white text-decoration-none fs-6">Home</a></li>
+          <li><a href="about.html" class="text-white text-decoration-none fs-6">About</a></li>
+          <li><a href="menu.html" class="text-white text-decoration-none fs-6">Menu</a></li>
+          <li><a href="recipe.html" class="text-white text-decoration-none fs-6">Recipes</a></li>
+          <li><a href="pub&partyhall.html" class="text-white text-decoration-none fs-6">Facilities</a></li>
+          <li><a href="blog.html" class="text-white text-decoration-none fs-6">Blogs</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none fs-6">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Contact</h6>
+        <p>
+          Manchappanahalli Gate, Khata No 1924/2024, Bagalur to Budigere Road, near Budigere By Pass, 
+          Manchapanahalli, Bengaluru, Karnataka 562165
+        </p>
+        <p class="text-nowrap fs-6">
+          <strong>Email:</strong> 
+          <a href="mailto:mangoleafblr@gmail.com" class="text-white text-decoration-none fs-6">mangoleafblr@gmail.com</a>
+        </p>
+        <p class="text-nowrap fs-6">
+          <strong>Phone:</strong> 
+          <a href="tel:+919880703329" class="text-white text-decoration-none fs-6">+91 98807 03329</a>
+        </p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Follow Us</h6>
+        <a href="https://www.facebook.com/p/Mango-Leaf-61571309891629/." class="text-white fs-5 me-3"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/mangoleafrestaurant_/" class="text-white fs-5 me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://youtube.com/@mangoleafrestaurant?si=t0I7qSUHk9THaQZt" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="text-center border-top border-light pt-3 mt-3">
+      <p class="mb-0">&copy; 2025 Mango Leaf Restaurant | All Rights Reserved </p>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  function scrollGallery(direction) {
+    const scrollContainer = document.getElementById('roomScroll');
+    const scrollAmount = 400; // how much to scroll per click
+    scrollContainer.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
+
+
+

@@ -3,215 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogs</title>
+
+  <!-- SEO Title & Description -->
+  <title>Mango Leaf Restaurant Blogs | Healthy Dining, Family Meals & Sustainable Food</title>
+  <meta name="description" content="Read Mango Leaf Restaurant’s blogs on healthy dining, family experiences, seasonal menus, and sustainable food practices in Bengaluru.">
+  <meta name="keywords" content="Mango Leaf Restaurant blogs, healthy dining Bengaluru, family dining, sustainable restaurant, Indian food blogs, seasonal menu">
+  <meta name="author" content="Mango Leaf Restaurant">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mango Leaf Restaurant Blogs | Healthy Dining, Family Meals & Sustainable Food">
+  <meta property="og:description" content="Explore our food blogs: healthy dining, seasonal menus, and customer stories at Mango Leaf Restaurant.">
+  <meta property="og:image" content="Blogshero.avif">
+  <meta property="og:url" content="https://yourwebsite.com/blog.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mango Leaf Restaurant Blogs">
+  <meta name="twitter:description" content="Discover healthy dining, seasonal food creations, and customer stories at Mango Leaf Restaurant.">
+  <meta name="twitter:image" content="Blogshero.avif">
+
+  <!-- Favicon -->
+  <link rel="icon" href="mangologo.jpg" type="image/jpg">
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="icon" href="mangologo.jpg" type="image/jpg">
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #fff;
-    }
-
+    body { font-family: 'Poppins', sans-serif; background: #fff; margin:0; }
     /* Navbar */
-    .navbar {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(8px);
-      border-bottom: 2px solid #f0f0f0;
-    }
-    .navbar-brand {
-      font-weight: 700;
-      color: #ff6600 !important;
-      font-size: 1.5rem;
-    }
-    .nav-link {
-      color: #333 !important;
-      margin-right: 20px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .nav-link:hover,
-    .nav-link.active {   /* Active state added */
-      color: #ff6600 !important;
-      font-weight: 600;
-    }
+    .navbar { background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); border-bottom: 2px solid #f0f0f0; }
+    .navbar-brand { font-weight: 700; color: #ff6600 !important; font-size: 1.5rem; }
+    .nav-link { color: #333 !important; margin-right: 20px; font-weight: 500; transition: color 0.3s; }
+    .nav-link:hover, .nav-link.active { color: #ff6600 !important; font-weight: 600; }
+    .logo { height: 80px; width: auto; }
+    @media (max-width: 768px) { .logo { height: 60px; } }
 
-    /* Navbar Logo Size */
-.logo {
-  height: 80px;   /* Increase size (default was ~50px) */
-  width: auto;    /* Keeps aspect ratio */
+    /* Hero */
+    .hero { position: relative; background: url('Blogshero.avif') no-repeat center center; background-size: cover; height: 400px; color: white; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
+    .hero::after { content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.55); z-index:1; }
+    .hero-content { position:relative; z-index:2; max-width:700px; }
+    .vision-badge { background:#d35400; display:inline-block; padding:6px 14px; font-size:14px; font-weight:bold; border-radius:4px; margin-bottom:18px; }
+    .hero h1 { font-size:40px; font-weight:bold; margin:0; }
+    .hero p { font-size:20px; margin:15px 0; }
+
+    /* Blogs */
+    .blog-heading-wrapper { text-align:center; }
+    .blog-heading { font-size:2.5rem; font-weight:600; letter-spacing:1px; margin:40px 0; color:#333; position:relative; display:inline-block; }
+    .blog-heading::after { content:""; display:block; width:100%; height:3px; margin:8px auto 0; background:#333; border-radius:2px; animation:fadePulse 2s infinite ease-in-out; }
+    @keyframes fadePulse { 0%,100%{opacity:0.5;} 50%{opacity:1;} }
+
+    .blog-grid { padding:40px 20px; background:#fff; }
+    .blog-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px; max-width:1200px; margin:0 auto; }
+    .blog-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.08); display:flex; flex-direction:column; transition: transform 0.3s; }
+    .blog-card:hover { transform: translateY(-6px); }
+    .blog-card img { width:100%; height:220px; object-fit:cover; }
+    .blog-title { font-size:20px; font-weight:700; margin:10px 16px; color:#111; }
+    .blog-excerpt { font-size:15px; color:#555; margin:0 16px 16px; }
+
+    /* Footer */
+    footer { background: linear-gradient(45deg,#ff6600,#ff9900); color:#fff; padding:40px 0; border-radius:40px 40px 0 0; }
+    footer a { color:#fff; margin:0 10px; font-size:1.3rem; transition:0.3s; }
+    footer a:hover { color:#000; }
+     /* Add spacing between dropdown items */
+.dropdown-menu .dropdown-item.dropdown-spaced {
+  padding: 8px 15px;   /* more clickable space */
+  margin-bottom: 4px;  /* space between items */
+  border-radius: 6px;  /* optional: rounded effect */
 }
 
-/* Make logo smaller on mobile screens */
-@media (max-width: 768px) {
-  .logo {
-    height: 60px;
-  }
+/* Optional hover effect */
+.dropdown-menu .dropdown-item.dropdown-spaced:hover {
+  background-color: #f8f9fa; /* light gray on hover */
 }
-
-body {
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    /* Hero Section */
-    .hero {
-  position: relative;
-  background: url('Blogshero.avif') no-repeat center center;
-  background-size: cover;
-  height: 400px;
-  color: white;
-  display: flex;
-  align-items: center;     /* vertical center */
-  justify-content: center; /* horizontal center */
-  text-align: center;      /* center text inside */
-  padding: 0 20px;
-}
-
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.55); /* dark overlay */
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-    }
-
-    .vision-badge {
-      background: #d35400;
-      display: inline-block;
-      padding: 6px 14px;
-      font-size: 14px;
-      font-weight: bold;
-      border-radius: 4px;
-      margin-bottom: 18px;
-    }
-
-    .hero h3 {
-      font-size: 40px;
-      margin: 0;
-      font-weight: bold;
-    }
-
-    .hero p {
-      font-size: 22px;
-      margin: 15px 0;
-    }
-
-.blog-heading-wrapper {
-  text-align: center; /* centers everything inside */
-}
-
-.blog-heading {
-  font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin: 40px 0;
-  color: #333;
-  position: relative;
-  display: inline-block; /* underline matches text width */
-}
-
-/* Underline effect */
-.blog-heading::after {
-  content: "";
-  display: block;
-  width: 100%;   /* same width as text */
-  height: 3px;
-  margin: 8px auto 0;
-  background: #333;
-  border-radius: 2px;
-  animation: fadePulse 2s infinite ease-in-out;
-}
-
-/* Simple fade animation */
-@keyframes fadePulse {
-  0%, 100% { opacity: 0.5; }
-  50%      { opacity: 1; }
-}
-
-  .blog-grid {
-  padding: 40px 20px;
-  background: #fff;
-}
-
-.blog-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.blog-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-}
-
-.blog-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.blog-meta {
-  font-size: 14px;
-  color: #555;
-  margin: 12px 16px 0;
-}
-
-.blog-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 10px 16px;
-  color: #111;
-}
-
-.blog-excerpt {
-  font-size: 15px;
-  color: #555;
-  margin: 0 16px 16px;
-}
-
-
-
-/* Footer */
-    footer {
-      background: linear-gradient(45deg, #ff6600, #ff9900);
-      color: #fff;
-      padding: 40px 0;
-      border-radius: 40px 40px 0 0;
-    }
-    footer a {
-      color: #fff;
-      margin: 0 10px;
-      font-size: 1.3rem;
-      transition: 0.3s;
-    }
-    footer a:hover {
-      color: #000;
-    }
   </style>
+
+  <!-- Schema.org Blog Markup -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"Mango Leaf Restaurant Blog",
+    "url":"https://yourwebsite.com/blog.html",
+    "description":"Healthy dining, seasonal food, and customer stories from Mango Leaf Restaurant in Bengaluru.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"Mango Leaf Restaurant",
+      "logo":{"@type":"ImageObject","url":"https://yourwebsite.com/mangologo.jpg"}
+    },
+    "blogPost":[
+      {
+        "@type":"BlogPosting",
+        "headline":"Healthy Dining at Mango Leaf | Fresh Ingredients, Authentic Flavors",
+        "image":"https://yourwebsite.com/Blogshero.avif",
+        "author":{"@type":"Organization","name":"Mango Leaf Restaurant"},
+        "publisher":{"@type":"Organization","name":"Mango Leaf Restaurant"},
+        "datePublished":"2025-01-15"
+      },
+      {
+        "@type":"BlogPosting",
+        "headline":"Our Journey Towards Sustainable Dining",
+        "image":"https://yourwebsite.com/blog2.avif",
+        "author":{"@type":"Organization","name":"Mango Leaf Restaurant"},
+        "datePublished":"2025-01-22"
+      },
+      {
+        "@type":"BlogPosting",
+        "headline":"What Our Guests Love Most About Mango Leaf",
+        "image":"https://yourwebsite.com/blog3.jpeg",
+        "author":{"@type":"Organization","name":"Mango Leaf Restaurant"},
+        "datePublished":"2025-02-01"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<!-- Navbar -->
+
+  <!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm sticky-top" style="background-color: rgb(253, 242, 227);">
   <div class="container">
     <!-- Logo -->
@@ -223,106 +139,113 @@ body {
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-        <li class="nav-item"><a class="nav-link" href="recipe.html">Recipes</a></li>
-        <li class="nav-item"><a class="nav-link active" href="blog.html">Blogs</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
+    <!-- Navbar -->
+<div class="collapse navbar-collapse" id="navmenu">
+  <ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+    <li class="nav-item"><a class="nav-link" href="recipe.html">Recipes</a></li>
+
+    <!-- Facilities Dropdown with Icons -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="facilitiesDropdown" role="button" 
+     data-bs-toggle="dropdown" aria-expanded="false">
+    Facilities
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="facilitiesDropdown">
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="pub&partyhall.html">
+        <i class="bi bi-cup-straw me-2"></i> Pub & Party Hall
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="restaurant.html">
+        <i class="bi bi-egg-fried me-2"></i> Restaurant
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="homedelivery.html">
+        <i class="bi bi-truck me-2"></i> Home Delivery
+      </a>
+    </li>
+    <!-- New Rooms item -->
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="rooms.html">
+        <i class="bi bi-house-door me-2"></i> Rooms
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="catering.html">
+        <i class="bi bi-basket me-2"></i> Catering
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item dropdown-spaced" href="tablebooking.html">
+        <i class="bi bi-calendar-check me-2"></i> Table Booking
+      </a>
+    </li>
+  </ul>
+</li>
+
+    <li class="nav-item"><a class="nav-link active" href="blog.html">Blogs</a></li>
+    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
 </nav>
     
 
-<!-- Hero Section -->
-<div class="hero">
-  <div class="hero-content">
-    <div class="vision-badge">OUR VISION STATEMENTS</div>
-    <h3>Mango Leaf Restaurant</h3>
-    <p>Make every meal a healthy experience</p>
-  </div>
-</div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="vision-badge">Our Blogs</span>
+      <h1>Mango Leaf Restaurant Blogs</h1>
+      <p>Discover healthy dining, seasonal menus, and stories from our guests.</p>
+    </div>
+  </section>
 
-<!-- Blogs Heading -->
-<div class="blog-heading-wrapper">
-  <h2 class="blog-heading">
-    ✨Our Blogs
-  </h2>
-</div>
+  <!-- Blogs -->
+  <section class="blog-grid">
+    <div class="blog-heading-wrapper">
+      <h2 class="blog-heading">Latest Blogs</h2>
+    </div>
+    <div class="blog-container">
 
-<!-- Blog Grid Section -->
-<section class="blog-grid">
-  <div class="blog-container">
+      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+        <img src="Blogshero.avif" alt="Healthy dining at Mango Leaf with fresh ingredients" itemprop="image">
+        <h3 class="blog-title" itemprop="headline">Healthy Dining at Mango Leaf</h3>
+        <p class="blog-excerpt" itemprop="description">We believe in serving meals prepared with fresh, authentic ingredients for a wholesome experience.</p>
+      </article>
 
-   <!-- Blog Post 1 -->
-<div class="blog-card">
-  <img src="Blogshero.avif" 
-       alt="Healthy Dining at Mango Leaf">
-  <h2 class="blog-title">
-    Healthy Dining at Mango Leaf | Fresh Ingredients, Authentic Flavors
-  </h2>
-  <p class="blog-excerpt">
-    At Mango Leaf, every dish is crafted with handpicked ingredients to ensure both taste and nutrition. Discover how we blend tradition with health in every meal.
-  </p>
-</div>
+      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+        <img src="blog2.avif" alt="Mango Leaf Restaurant sustainable dining practices" itemprop="image">
+        <h3 class="blog-title" itemprop="headline">Our Journey Towards Sustainable Dining</h3>
+        <p class="blog-excerpt" itemprop="description">From reducing waste to sourcing locally, we’re building a sustainable future for food lovers.</p>
+      </article>
 
+      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+        <img src="blog3.jpeg" alt="Happy guests enjoying meals at Mango Leaf" itemprop="image">
+        <h3 class="blog-title" itemprop="headline">What Our Guests Love Most</h3>
+        <p class="blog-excerpt" itemprop="description">Read heartwarming stories of families and friends who made memories at Mango Leaf.</p>
+      </article>
 
-    <!-- Blog Post 2 -->
-<div class="blog-card">
-  <img src="blog2.avif" 
-       alt="Sustainable Dining at Mango Leaf">
-  <h2 class="blog-title">
-    Our Journey Towards Sustainable Dining
-  </h2>
-  <p class="blog-excerpt">
-    Learn how Mango Leaf Restaurant is reducing plastic use, sourcing locally, and creating eco-friendly dining experiences for a better tomorrow.
-  </p>
-</div>
+       <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+        <img src="blog4.avif" alt="Happy guests enjoying meals at Mango Leaf" itemprop="image">
+        <h3 class="blog-title" itemprop="headline"> Introducing Our Seasonal Mango Leaf Restaurant Creations</h3>
+        <p class="blog-excerpt" itemprop="description">Every season inspires new recipes at Mango Leaf. Explore our limited-time mango desserts, refreshing beverages, and chef-curated specialties.</p>
+      </article>
 
-   <!-- Blog Post 3 -->
-<div class="blog-card">
-  <img src="blog3.jpeg" 
-       alt="Customer Experiences at Mango Leaf">
-  <h2 class="blog-title">
-    What Our Guests Love Most About Mango Leaf
-  </h2>
-  <p class="blog-excerpt">
-    Hear from our customers about their favorite dishes, unforgettable dining moments, and why Mango Leaf is their go-to restaurant for family meals.
-  </p>
-</div>
+      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+        <img src="menuimage.jpg" alt="Happy guests enjoying meals at Mango Leaf" itemprop="image">
+        <h3 class="blog-title" itemprop="headline">  Why Families Love Dining at Mango Leaf</h3>
+        <p class="blog-excerpt" itemprop="description">From kids to grandparents, everyone finds a favorite at Mango Leaf. Discover why we are the perfect spot for family gatherings and celebrations.</p>
+      </article>
 
- <!-- Blog Post 4 -->
-<div class="blog-card">
-  <img src="blog4.avif" 
-       alt="Seasonal Menu at Mango Leaf">
-  <h2 class="blog-title">
-    Introducing Our Seasonal Mango Leaf Restaurant Creations
-  </h2>
-  <p class="blog-excerpt">
-    Every season inspires new recipes at Mango Leaf. Explore our limited-time mango desserts, refreshing beverages, and chef-curated specialties.
-  </p>
-</div>
+    </div>
+  </section>
 
-   <!-- Blog Post 5 -->
-<div class="blog-card">
-  <img src="menuimage.jpg" 
-       alt="Family Dining at Mango Leaf">
-  <h2 class="blog-title">
-    Why Families Love Dining at Mango Leaf
-  </h2>
-  <p class="blog-excerpt">
-    From kids to grandparents, everyone finds a favorite at Mango Leaf. Discover why we are the perfect spot for family gatherings and celebrations.
-  </p>
-</div>
-
-</section>
-
-
-
-<!-- Footer -->
+  <!-- Footer -->
 <footer class="text-white pt-5" style="background: #ff6600; border-radius: 40px 40px 0 0;">
   <div class="container">
     <div class="row text-center text-md-start">
@@ -333,7 +256,7 @@ body {
         <p>Eat healthy, live better. Discover delicious recipes and fresh meals every day.</p>
       </div>
 
-       <!-- Quick Links -->
+      <!-- Quick Links -->
       <div class="col-md-3 mb-4">
         <h6 class="fw-bold">Quick Links</h6>
         <ul class="list-unstyled">
@@ -341,11 +264,12 @@ body {
           <li><a href="about.html" class="text-white text-decoration-none fs-6">About</a></li>
           <li><a href="menu.html" class="text-white text-decoration-none fs-6">Menu</a></li>
           <li><a href="recipe.html" class="text-white text-decoration-none fs-6">Recipes</a></li>
+          <li><a href="pub&partyhall.html" class="text-white text-decoration-none fs-6">Facilities</a></li>
           <li><a href="blog.html" class="text-white text-decoration-none fs-6">Blogs</a></li>
           <li><a href="contact.html" class="text-white text-decoration-none fs-6">Contact</a></li>
         </ul>
       </div>
-      
+
       <!-- Contact -->
       <div class="col-md-3 mb-4">
         <h6 class="fw-bold">Contact</h6>
@@ -354,12 +278,13 @@ body {
           Manchapanahalli, Bengaluru, Karnataka 562165
         </p>
         <p class="text-nowrap fs-6">
-          <strong>Email:</strong><a href="mailto:mangoleafblr@gmail.com" class="text-white text-decoration-none fs-6">mangoleafblr@gmail.com</a>
+          <strong>Email:</strong> 
+          <a href="mailto:mangoleafblr@gmail.com" class="text-white text-decoration-none fs-6">mangoleafblr@gmail.com</a>
         </p>
         <p class="text-nowrap fs-6">
-          <strong>Phone:</strong><a href="tel:+919880703329" class="text-white text-decoration-none fs-6">+91 98807 03329</a>
+          <strong>Phone:</strong> 
+          <a href="tel:+919880703329" class="text-white text-decoration-none fs-6">+91 98807 03329</a>
         </p>
-        
       </div>
 
       <!-- Social Media -->
@@ -373,12 +298,10 @@ body {
 
     <!-- Bottom -->
     <div class="text-center border-top border-light pt-3 mt-3">
-  <p class="mb-0">&copy; 2025 Mango Leaf Restaurant | All Rights Reserved </p>
-</div>
-
+      <p class="mb-0">&copy; 2025 Mango Leaf Restaurant | All Rights Reserved </p>
+    </div>
   </div>
 </footer>
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
